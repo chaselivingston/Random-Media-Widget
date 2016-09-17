@@ -31,12 +31,16 @@ function cl_get_random_image( $image_tag ) {
 	}
 
 	$query_image = new WP_Query( $args );
-	$images = array();
-	foreach ( $query_image->posts as $image) {
-		$images[]= $image->guid;
-	}
 
-	return $images[0];
+	if ( $query_image->posts ) {
+		$images = array();
+		foreach ( $query_image->posts as $image) {
+			$images[]= $image->guid;
+		}
+		return $images[0];
+	} else {
+		return null;
+	}
 }
 
 function cl_attachment_taxonomy() {
@@ -61,7 +65,12 @@ class RandomMediaWidget extends WP_Widget {
 		if ( empty( $instance['tag'] ) ) {
 			$instance['tag'] = null;
 		}
-		echo '<img src="' . esc_url( cl_get_random_image( $instance['tag'] ), array('http', 'https') ). '" />';
+
+		if ( cl_get_random_image( $instance['tag'] ) == null ) {
+			echo '<p>No images in your Media Library!</p>';
+		} else {
+			echo '<img src="' . esc_url( cl_get_random_image( $instance['tag'] ), array('http', 'https') ). '" />';
+		}
 		echo $args['after_widget'];
 	}
 
