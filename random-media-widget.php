@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Random Media Widget
-Plugin URI: http://chaselivingston.me
+Plugin URI: https://github.com/chaselivingston/Random-Media-Widget
 Description: Display a random image from your Media Library in a widget.
 Author: Chase Livingston
 Version: 1.0
