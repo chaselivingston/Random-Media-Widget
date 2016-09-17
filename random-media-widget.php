@@ -61,7 +61,7 @@ class RandomMediaWidget extends WP_Widget {
 		if ( empty( $instance['tag'] ) ) {
 			$instance['tag'] = null;
 		}
-		echo '<img src="' . cl_get_random_image( $instance['tag'] ) . '" />';
+		echo '<img src="' . esc_url( cl_get_random_image( $instance['tag'] ), array('http', 'https') ). '" />';
 		echo $args['after_widget'];
 	}
 
