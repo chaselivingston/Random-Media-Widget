@@ -7,7 +7,7 @@ Author: Chase Livingston
 Version: 1.0
 Author URI: http://chaselivingston.me
 License: GPL2
-Text Domain: rand_media_widget
+Text Domain: random_media_widget
 */
 
 function cl_get_random_image( $image_tag ) {
@@ -51,9 +51,9 @@ add_action( 'init', 'cl_attachment_taxonomy' );
 class RandomMediaWidget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
-		'rand_media_widget',
-		__( 'Random Media Widget', 'rand_media_widget' ),
-		array( 'description' => __( 'A widget to display a random media library image.', 'rand_media_widget' ), )
+		'random_media_widget',
+		__( 'Random Media Widget', 'random_media_widget' ),
+		array( 'description' => __( 'A widget to display a random media library image.', 'random_media_widget' ), )
 		);
 	}
 
@@ -75,8 +75,8 @@ class RandomMediaWidget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'rand_media_widget' );
-		$tag = ! empty( $instance['tag'] ) ? $instance['tag'] : __( 'Enter an image tag (optional)', 'rand_media_widget' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'random_media_widget' );
+		$tag = ! empty( $instance['tag'] ) ? $instance['tag'] : __( 'Enter an image tag (optional)', 'random_media_widget' );
 		?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( esc_attr( 'Title:' ) ); ?></label>
