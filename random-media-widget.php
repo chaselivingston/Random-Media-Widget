@@ -7,6 +7,7 @@ Author: Chase Livingston
 Version: 1.0
 Author URI: http://chaselivingston.me
 License: GPL2
+Text Domain: rand_media_widget
 */
 
 function cl_get_random_image( $image_tag ) {
