@@ -79,6 +79,8 @@ class RandomMediaWidget extends WP_Widget {
 	}
 }
 
-add_action( 'widgets_init', function(){
-register_widget( 'RandomMediaWidget' );
-});
+function cl_register_widget() {
+	register_widget( 'RandomMediaWidget' );
+}
+
+add_action( 'widgets_init', 'cl_register_widget' );
