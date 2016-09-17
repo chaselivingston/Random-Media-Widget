@@ -58,22 +58,21 @@ class RandomMediaWidget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
         if ( empty( $instance['tag'] ) ) {
-			//echo apply_filters( 'widget_tag', $instance['tag'] );
             $instance['tag'] = null;
-		}
-		echo '<img src="' . cl_get_random_image( $instance['tag'] ) . '" />';
-		echo $args['after_widget'];
+	}
+	echo '<img src="' . cl_get_random_image( $instance['tag'] ) . '" />';
+	echo $args['after_widget'];
     }
 
     public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'rand_media_widget' );
+	$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'rand_media_widget' );
         $tag = ! empty( $instance['tag'] ) ? $instance['tag'] : __( 'Enter an image tag (optional)', 'rand_media_widget' );
 		?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( esc_attr( 'Title:' ) ); ?></label>
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+	<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( esc_attr( 'Title:' ) ); ?></label>
+	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
         <label for="<?php echo esc_attr( $this->get_field_id( 'tag' ) ); ?>"><?php _e( esc_attr( 'Tag:' ) ); ?></label>
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'tag' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'tag' ) ); ?>" type="text" value="<?php echo esc_attr( $tag ); ?>">
+	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'tag' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'tag' ) ); ?>" type="text" value="<?php echo esc_attr( $tag ); ?>">
 		</p>
 		<?php
 	}
