@@ -75,7 +75,7 @@ class RandomMediaWidget extends WP_Widget {
 	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'tag' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'tag' ) ); ?>" type="text" value="<?php echo esc_attr( $tag ); ?>">
 	</p>
 	<?php
-	}
+    }
 }
 
 add_action( 'widgets_init', function(){
